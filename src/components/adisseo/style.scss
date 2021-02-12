@@ -1,0 +1,119 @@
+#adisseo {
+  .adisseo-background {
+    width: 100vw;
+    height: 110vh;
+    background: url("../../assets/images/adisseo/background-adisseo.jpg") center
+      center no-repeat;
+    background-size: cover;
+    transform: translateY(0vh);
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+
+    &.selected {
+      transform: translateY(10vh);
+    }
+  }
+
+  .adisseo-container {
+    width: 400px;
+    height: 200vh;
+    transform: translateY(-100vh);
+    position: absolute;
+    top: 0;
+    left: 12%;
+
+    .launch-container {
+      width: 100px;
+      height: 100px;
+      background: url("../../assets/images/adisseo/separation-adisseo.png")
+        center top repeat-y;
+      position: absolute;
+      left: 300px;
+      top: 0px;
+
+      .launch {
+        width: 100px;
+        height: 100px;
+        background-color: transparent;
+        border-radius: 50%;
+        position: absolute;
+        left: 0px;
+        top: 100%;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #959595;
+        }
+      }
+    }
+
+    .casestudy {
+      width: 378px;
+      height: 205px;
+      position: absolute;
+      left: 0px;
+      top: 16%;
+    }
+
+    .separation {
+      padding-bottom: 150px;
+      width: 140px;
+      height: 100vh;
+      box-sizing: border-box;
+      background: url("../../assets/images/adisseo/separation-adisseo.png")
+        center top repeat-y;
+      background-clip: content-box;
+      position: absolute;
+      left: -70px;
+      top: 25%;
+
+      .sprite-container {
+        width: 140px;
+        height: 140px;
+        background: url("../../assets/images/adisseo/elipse-adisseo.png") center
+          center no-repeat;
+        border-radius: 50%;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        cursor: pointer;
+
+        .sprite {
+          width: 100px;
+          height: 55px;
+          transform: translate(-46px, -22px);
+          position: absolute;
+          left: 50%;
+          top: 50%;
+        }
+
+        &:hover {
+          background-image: url("../../assets/images/adisseo/sprite-hover-adisseo.png");
+        }
+      }
+
+      .content {
+        width: 237px;
+        height: 77px;
+        position: absolute;
+        left: 0px;
+        bottom: -120px;
+      }
+    }
+
+    &.selected {
+      transform: translateY(0vh);
+    }
+  }
+
+  &.selected {
+    .adisseo-background {
+      transition: transform 1s ease-out;
+    }
+
+    .adisseo-container {
+      transition: transform 1s ease-out;
+    }
+  }
+}

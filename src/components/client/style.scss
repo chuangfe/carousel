@@ -1,0 +1,167 @@
+#client {
+  background: url("../../assets/images/client/background-client.jpg") center
+    center no-repeat;
+  background-size: cover;
+
+  .content-container {
+    width: 100vw;
+    height: 2000px;
+    background: url("../../assets/images/client/fork-client.png") center top
+      repeat;
+    position: absolute;
+    left: 0px;
+    // -255px 為初始狀態, 最高是 -126px, 最低是中間 col 的高度, 與其改 top 不如改
+    // transform, 這樣可能更清楚
+    top: -255px;
+    // 可動範圍是 (126px) ~ (-1 * 中間 col 的高度), stop function 則改為 0px 完美!
+    // 可是如果螢幕高度大於中間 col 的高度, 怎麼辦? 那就事件拔掉, top 改成 -126px
+    // 隱藏沒圖片的半塊叉叉, 讓第一格有圖片的貼頂
+
+    .col {
+      width: 255px;
+      position: absolute;
+      left: 50%;
+      top: 126px;
+
+      .rhombus-container {
+        width: 255px;
+        height: 255px;
+        background: url("../../assets/images/client/fond-client.png") center
+          center no-repeat;
+        background-size: contain;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        opacity: 0;
+      }
+    }
+
+    .col-1 {
+      padding-top: 383px;
+      transform: translateX(-510px);
+    }
+
+    .col-2 {
+      padding-top: 255px;
+      transform: translateX(-383px);
+    }
+
+    .col-3 {
+      padding-top: 128px;
+      transform: translateX(-255px);
+    }
+
+    .col-4 {
+      transform: translateX(-128px);
+      z-index: 1;
+
+      .launch-container {
+        width: 255px;
+        height: 255px;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        cursor: pointer;
+
+        .launch {
+          width: 115px;
+          height: 159px;
+          transform: translate(-58px, -36px);
+          display: block;
+        }
+
+        .launch-over {
+          width: 115px;
+          height: 159px;
+          transform: translate(-58px, -36px);
+          display: none;
+        }
+
+        .back {
+          transform: translate(0px, 0px);
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          display: none;
+        }
+
+        &:hover {
+          .launch {
+            display: none;
+          }
+
+          .launch-over {
+            display: block;
+          }
+        }
+      }
+    }
+
+    .col-5 {
+      padding-top: 128px;
+      transform: translateX(0);
+    }
+
+    .col-6 {
+      padding-top: 255px;
+      transform: translateX(128px);
+    }
+
+    .col-7 {
+      padding-top: 383px;
+      transform: translateX(255px);
+    }
+
+    .work {
+      width: 196px;
+      height: 8px;
+      transform: translate(-98px, 0px);
+      position: absolute;
+      left: 50%;
+      top: 370px;
+      z-index: 1;
+      display: block;
+    }
+
+    .good {
+      width: 683px;
+      height: 20px;
+      transform: translate(-342px, 0px);
+      position: absolute;
+      left: 50%;
+      top: 570px;
+      z-index: 1;
+      opacity: 1;
+      transition: all 0.4s ease-out 0s;
+    }
+
+    &.show {
+      .rhombus-container {
+        opacity: 1;
+      }
+
+      .launch-container {
+        .launch {
+          display: none !important;
+        }
+
+        .launch-over {
+          display: none !important;
+        }
+
+        .back {
+          display: block;
+        }
+      }
+
+      .work {
+        display: none;
+      }
+
+      .good {
+        transform: translate(-342px, 100px);
+        opacity: 0;
+      }
+    }
+  }
+}

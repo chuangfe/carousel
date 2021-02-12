@@ -1,0 +1,445 @@
+// 使用 @import 引入自己寫的資源
+@import "./../../assets/style/reset.css";
+@import "../../assets/style/class.css";
+
+@font-face {
+  font-family: "GeosansLightRegular";
+  src: url("../../assets/fonts/geosanslight/geosanslight-webfont.eot");
+  src: url("../../assets/fonts/geosanslight/geosanslight-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/geosanslight/geosanslight-webfont.woff")
+      format("woff"),
+    url("../../assets/fonts/geosanslight/geosanslight-webfont.ttf")
+      format("truetype"),
+    url("../../assets/fonts/geosanslight/geosanslight-webfont.svg#GeosansLightRegular")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AkzidenzGroteskBQMedium";
+  src: url("../../assets/fonts/akzidenzgrotesk/akzidenzgrotesk-webfont.eot");
+  src: url("../../assets/fonts/akzidenzgrotesk/akzidenzgrotesk-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../assets/fonts/akzidenzgrotesk/akzidenzgrotesk-webfont.woff")
+      format("woff"),
+    url("../../assets/fonts/akzidenzgrotesk/akzidenzgrotesk-webfont.ttf")
+      format("truetype"),
+    url("../../assets/fonts/akzidenzgrotesk/akzidenzgrotesk-webfont.svg#AkzidenzGroteskBQMediumRegular")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  overflow: hidden;
+  background-color: #000;
+}
+
+#carousel {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  font-size: 32px;
+  color: #fff;
+}
+
+#carousel-container {
+  width: 100vw;
+  height: 200vh;
+  overflow: hidden;
+  transform: translateY(0vh);
+  transition: transform 0.4s ease-out;
+
+  &.show-home {
+    transform: translateY(-100vh);
+  }
+}
+
+#modules-container {
+  width: 1500vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  transform: translateX(0vw);
+
+  > section {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    left: 0px;
+    top: 0px;
+  }
+}
+
+#home {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+
+  .home-background {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform: translate(0px, 0px);
+
+    .home-background-dashed {
+      width: 5000vw;
+      height: 5000vh;
+      background: url("../../assets/images/home/background-dashed-home.png")
+        #000 left bottom repeat;
+      // js 動態獲取 home-background-image-item 位置, 達到對對齊效果
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      transform: translate(0px, 0px);
+    }
+
+    .home-background-images-container {
+      display: flex;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -290px;
+      margin-left: -120px;
+
+      .home-background-image-item {
+        width: 240px;
+        height: 240px;
+        overflow: hidden;
+        position: relative;
+        top: 0px;
+        left: 0px;
+
+        .home-background-image-mask {
+          width: 241px;
+          height: 241px;
+          background: url("../../assets/images/home/sprite2-home.png")
+            transparent center center no-repeat;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+        }
+
+        .home-background-image-triangle {
+          border: 89px solid transparent;
+          border-bottom-color: #000;
+          transform: rotate(-45deg);
+          position: absolute;
+          left: -89px;
+          top: -89px;
+        }
+
+        &.selected .home-background-image-mask {
+          transform: translate(-100%, -100%);
+        }
+
+        &::after {
+          display: block;
+          font-size: 22px;
+          font-family: "GeosansLightRegular";
+          color: #2e2e2e;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        &.selected::after {
+          color: #fff;
+        }
+
+        @for $i from 1 through 14 {
+          $j: $i - 1;
+
+          &:nth-of-type(#{$i}) {
+            // background-image: url("../../assets/images/home/" + $i + "-home.png");
+            left: $j * -105px;
+            top: $j * -135px;
+
+            &::after {
+              content: if($i<10, "0" + $i, "" + $i);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .home-font-container {
+    display: flex;
+    margin: 50px 0px 0px -235px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(0px);
+
+    .home-font-item {
+      width: 470px;
+      height: 85px;
+      text-align: center;
+
+      a {
+        display: block;
+        font-size: 34px;
+        font-family: "GeosansLightRegular";
+        letter-spacing: 9px;
+        color: #383838;
+      }
+
+      &.selected {
+        a {
+          color: #fff;
+        }
+      }
+
+      .description {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 12px;
+        font-family: "Georgia";
+        font-style: italic;
+        color: #686868;
+        letter-spacing: 2px;
+      }
+    }
+  }
+
+  &.show-home {
+    .home-background {
+      // 參考 index.js home.backgroundSetStyle function
+      // transition: transform 0.4s ease-out;
+      transition: transform 0.4s ease-out, left 0.4s ease-out, top 0.4s ease-out;
+
+      .home-background-images-container {
+        .home-background-image-item {
+          .home-background-image-mask {
+            transition: transform 0.4s ease-out;
+          }
+        }
+      }
+    }
+
+    .home-font-container {
+      transition: transform 0.4s ease-out;
+    }
+  }
+}
+
+#nav {
+  width: 100vw;
+  background-color: #000;
+  position: absolute;
+  left: 0px;
+  bottom: -32px;
+  display: none;
+
+  .logo {
+    width: 151px;
+    height: 19px;
+    position: absolute;
+    top: 38%;
+    left: 20%;
+    display: none;
+  }
+
+  .navigator-container {
+    margin: 0 auto;
+    width: 421px;
+    height: 58px;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+
+    &:before {
+      margin: 0px;
+      padding: 0px;
+      display: block;
+      content: "";
+
+      font-size: 0px;
+      width: 1px;
+      height: 58px;
+      background: url("../../assets/images/nav/r-nav.png") right top no-repeat;
+      user-select: none;
+    }
+
+    .navigator {
+      width: 30px;
+      height: 58px;
+      background: url("../../assets/images/nav/r-nav.png") right top no-repeat;
+      user-select: none;
+    }
+
+    .selected {
+      background-image: url("../../assets/images/nav/r-selected-nav.png");
+    }
+
+    .navigator-drag {
+      width: 29px;
+      height: 56px;
+      background-color: #fff;
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      transform: translateX(1px);
+      user-select: none;
+    }
+  }
+
+  .social {
+    position: absolute;
+    right: 26%;
+    bottom: 38%;
+    display: none;
+
+    ul {
+      display: flex;
+    }
+
+    li {
+      padding-left: 2px;
+    }
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 26px;
+      height: 12px;
+    }
+
+    img {
+      margin: 0 auto;
+    }
+
+    .social-facebook,
+    .social-twitter {
+      border-right: 2px solid #4d4d4d;
+    }
+  }
+
+  .credit {
+    font-size: 12px;
+    font-family: "AkzidenzGroteskBQMedium";
+    position: absolute;
+    right: 2%;
+    bottom: 30%;
+    display: none;
+
+    > .credit-content {
+      display: none;
+      padding: 45px 20px 40px 30px;
+      background-color: #0f0f0f;
+      color: #dcdcdc;
+      line-height: 20px;
+      text-align: right;
+      text-transform: uppercase;
+      position: absolute;
+      right: -40%;
+      bottom: -20%;
+
+      span {
+        color: #939393;
+      }
+
+      a {
+        color: #dcdcdc;
+      }
+    }
+
+    > .credit-title {
+      color: #424545;
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    &:hover {
+      > .credit-content {
+        display: block;
+      }
+    }
+  }
+
+  .mask-background {
+    width: 100%;
+    height: 26px;
+    background-color: #000;
+    position: absolute;
+    top: 1px;
+    left: 0px;
+    display: block;
+    cursor: pointer;
+  }
+
+  .mask-hover {
+    width: 100%;
+    height: 26px;
+    background-color: #2f3336;
+    position: absolute;
+    left: 0px;
+    top: 26px;
+    transition: transform 0.4s ease-out;
+    display: block;
+    cursor: pointer;
+  }
+
+  .mask-menu {
+    width: 32px;
+    height: 6px;
+    transform: translateX(-50%);
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    display: block;
+    cursor: pointer;
+  }
+
+  &:hover {
+    .mask-hover {
+      transform: translateY(-24px);
+    }
+  }
+
+  &.show-nav {
+    bottom: 0px;
+
+    .logo {
+      display: block;
+    }
+
+    .navigator-container {
+      .navigator-drag {
+        transition: transform 0.4s ease-out;
+      }
+    }
+
+    .social {
+      display: block;
+    }
+
+    .credit {
+      display: block;
+    }
+
+    .mask-background {
+      display: none;
+    }
+
+    .mask-hover {
+      display: none;
+    }
+
+    .mask-menu {
+      display: none;
+    }
+  }
+}

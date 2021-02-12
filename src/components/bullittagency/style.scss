@@ -1,0 +1,160 @@
+#bullittagency {
+  background: url("../../assets/images/bullittagency/background-bullittagency.jpg")
+    center center no-repeat;
+  background-size: cover;
+
+  .text {
+    width: 484px;
+    height: 194px;
+    transform: translate(-50%, -80%);
+  }
+
+  .launch-container {
+    transform: translate(-50%, 180%);
+    cursor: pointer;
+
+    img {
+      width: 392px;
+      height: 50px;
+    }
+
+    // 背景透明, 字體白色
+    .launch {
+      display: block;
+    }
+
+    // 背景白色, 字體黑色
+    .launch-hover {
+      display: none;
+    }
+
+    &:hover {
+      .launch {
+        display: none;
+      }
+      .launch-hover {
+        display: block;
+      }
+    }
+  }
+
+  .mask {
+    font-size: 0px;
+    line-height: 0px;
+    cursor: pointer;
+
+    div {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background: #0f1012 center center no-repeat;
+      position: relative;
+
+      &.square-wetryto {
+        background-image: url("../../assets/images/bullittagency/square-wetryto-bullittagency.jpg");
+      }
+
+      &.square-a {
+        background-image: url("../../assets/images/bullittagency/square-a-bullittagency.jpg");
+      }
+
+      &.square-b-bold {
+        background-image: url("../../assets/images/bullittagency/square-b-bold-bullittagency.jpg");
+      }
+
+      &.square-c {
+        background-image: url("../../assets/images/bullittagency/square-c-bullittagency.jpg");
+      }
+
+      &.square-e {
+        background-image: url("../../assets/images/bullittagency/square-e-bullittagency.jpg");
+      }
+
+      &.square-e-bold {
+        background-image: url("../../assets/images/bullittagency/square-e-bold-bullittagency.jpg");
+      }
+
+      &.square-h {
+        background-image: url("../../assets/images/bullittagency/square-h-bullittagency.jpg");
+      }
+
+      &.square-k {
+        background-image: url("../../assets/images/bullittagency/square-k-bullittagency.jpg");
+      }
+
+      &.square-l {
+        background-image: url("../../assets/images/bullittagency/square-l-bullittagency.jpg");
+      }
+
+      &.square-m {
+        background-image: url("../../assets/images/bullittagency/square-m-bullittagency.jpg");
+      }
+
+      &.square-p {
+        background-image: url("../../assets/images/bullittagency/square-p-bullittagency.jpg");
+      }
+
+      &.square-r-bold {
+        background-image: url("../../assets/images/bullittagency/square-r-bold-bullittagency.jpg");
+      }
+
+      &.square-t {
+        background-image: url("../../assets/images/bullittagency/square-t-bullittagency.jpg");
+      }
+
+      &.square-t-bold {
+        background-image: url("../../assets/images/bullittagency/square-t-bold-bullittagency.jpg");
+      }
+
+      &.square-w-bold {
+        background-image: url("../../assets/images/bullittagency/square-w-bold-bullittagency.jpg");
+      }
+
+      &.square-line {
+        background-image: url("../../assets/images/bullittagency/square-line-bullittagency.jpg");
+      }
+    }
+    // 畫面離開 #bullittagency 時, #bullittagency remove selected class, 執行
+    // bullittagency.stop() .mask add .on-hover class, 使用最高權限
+    // transition: none !important; 讓 squares 立刻恢復不透明
+    &.on-hover {
+      div {
+        transition: none !important;
+        opacity: 1;
+      }
+    }
+  }
+
+  // 當前畫面在 #bullittagency 時, #bullittagency add selected class
+  &.selected {
+    // .mask remove .on-hover class 時, squares 利用行內樣式隱藏
+    .mask {
+      transition: opacity 0.1s ease-out 2s;
+      opacity: 0;
+      // .mask click event 後刪除自己的 .on-hover class, squares 會使用"行內樣式"來
+      // 達成 delay 透明, 並且, 最後一個完成透明的 div 有設置 transitionend, 來使
+      // 用 display: 'none'; 隱藏 .mask
+      div {
+        opacity: 0;
+      }
+      // 初始狀態與 launchContainerClickHandler .mask add .on-hover class 時,
+      // transition: none; 跳過 js 中的 maskTransitionendHandler, 避免再次
+      // display: none; 恢復 .mask display: block; 此時 squares 的 transition
+      // !important; 高於 create 時的行內樣式
+      &.on-hover {
+        transition: none;
+        opacity: 1;
+        // squares hover 解除時, "有動畫且延遲不透明"
+        div {
+          transition: opacity 0.2s ease-out 1s !important;
+          opacity: 1;
+          // squares hover 觸發時, "立刻透明"
+          &:hover {
+            transition: none !important;
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+}

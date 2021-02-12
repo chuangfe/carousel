@@ -1,0 +1,130 @@
+#twist {
+  background: url("../../assets/images/twist/background-twist.jpg") center
+    center no-repeat;
+  background-size: cover;
+
+  .sprite-one {
+    width: 70px;
+    height: 93px;
+    transform: translate(-150px, -180px);
+  }
+
+  .sprite-two {
+    width: 44px;
+    height: 53px;
+    transform: translate(0px, -50px);
+  }
+
+  .sprite-three {
+    width: 159px;
+    height: 157px;
+    transform: translate(-100px, 190px);
+  }
+
+  .sprite-four {
+    width: 257px;
+    height: 187px;
+    transform: translate(310px, 120px);
+  }
+
+  .launch-container {
+    width: 156px;
+    height: 159px;
+    transform: translate(340px, 60px);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    cursor: pointer;
+
+    img {
+      width: 156px;
+      height: 159px;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+
+      &:nth-of-type(1) {
+        display: block;
+      }
+
+      &:nth-of-type(2) {
+        display: none;
+      }
+    }
+
+    &:hover {
+      img {
+        &:nth-of-type(1) {
+          display: none;
+        }
+
+        &:nth-of-type(2) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .mask {
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    display: none;
+
+    .launch {
+      width: 437px;
+      height: 437px;
+      transform: translate(-232px, -276px);
+    }
+
+    .text {
+      width: 836px;
+      height: 9px;
+      transform: translate(-398px, -20px);
+    }
+
+    .circle-container {
+      width: 372px;
+      height: 372px;
+      transform: translate(-156px, -196px);
+      cursor: pointer;
+
+      .circle-border {
+        width: 0px;
+        height: 0px;
+        transition: all 0.1s ease-in-out 0s;
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+      }
+
+      .go {
+        width: 0px;
+        height: 0px;
+        transition: all 0.1s ease-in-out 0s;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+      }
+
+      &:hover {
+        .circle-border {
+          width: 372px;
+          height: 372px;
+        }
+
+        .go {
+          width: 82px;
+          height: 82px;
+        }
+      }
+    }
+
+    &.show {
+      display: block;
+    }
+  }
+}

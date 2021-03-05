@@ -7,7 +7,7 @@ const path = require("path");
 
 // development 使用開發模式
 // production 使用線上模式
-const mode = "development";
+const mode = "production";
 
 // development 使用 eval-source-map
 // production 使用 nosources-source-map
@@ -153,7 +153,7 @@ function devServer() {
         // 除了基本資訊外, 其他不顯示
         quiet: true,
       }
-    : null;
+    : undefined;
 }
 
 //------------------------------------------------------------------------------

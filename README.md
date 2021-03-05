@@ -1,4 +1,4 @@
-# 標題
+# Carousel
 
 ## 副標題
 
@@ -17,3 +17,10 @@ _斜線_
 ---
 
 <!-- 分隔線 -->
+
+### GitHub Pages
+
+https://chuangfe.github.io/carousel/dist/index.html(https://chuangfe.github.io/carousel/dist/index.html)
+
+<!-- 分隔線 -->
+

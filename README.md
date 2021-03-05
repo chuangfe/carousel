@@ -16,9 +16,7 @@ _斜線_
 
 ---
 
-# Carousel
-
----
+# Carousel Works
 
 ### Copyright© 
 
@@ -32,3 +30,12 @@ https://chuangfe.github.io/carousel/dist/index.html
 
 ---
 
+### 使用的工具
+
+VSCode
+
+Webpack
+
+jQuery
+
+---

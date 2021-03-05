@@ -1,19 +1,13 @@
 
 # Carousel Works
 
-
-
 ### Copyright© 
 
 http://www.blacknegative.com/#!/whoweare/
 
-
-
 ### GitHub Pages
 
 https://chuangfe.github.io/carousel/dist/index.html
-
-
 
 ### 使用的工具
 

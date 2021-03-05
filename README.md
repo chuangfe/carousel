@@ -16,11 +16,19 @@ _斜線_
 
 ---
 
-<!-- 分隔線 -->
+# Carousel
+
+---
+
+### Copyright© 
+
+http://www.blacknegative.com/#!/whoweare/
+
+---
 
 ### GitHub Pages
 
-https://chuangfe.github.io/carousel/dist/index.html(https://chuangfe.github.io/carousel/dist/index.html)
+https://chuangfe.github.io/carousel/dist/index.html
 
-<!-- 分隔線 -->
+---
 

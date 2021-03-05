@@ -1,4 +1,22 @@
-# 標題
+# Carousel Works
+
+### Copyright©
+
+http://www.blacknegative.com/#!/whoweare/
+
+### GitHub Pages
+
+https://chuangfe.github.io/carousel/dist/index.html
+
+### 使用的工具
+
+VSCode
+
+Webpack
+
+jQuery
+
+---
 
 ## 副標題
 
@@ -15,5 +33,3 @@ _斜線_
 > 引用內容
 
 ---
-
-<!-- 分隔線 -->

@@ -13,8 +13,6 @@ module.exports = (env, options) => {
   const devtool =
     mode === "development" ? "eval-source-map" : "nosources-source-map";
 
-  console.log(mode, "---------------------------------------------------");
-
   return {
     // 當前使用的 webpack 模式
     mode: mode,

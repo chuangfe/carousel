@@ -6,7 +6,7 @@ http://www.blacknegative.com/#!/whoweare/
 
 ### GitHub Pages
 
-https://chuangfe.github.io/carousel/dist/index.html
+https://chuangfe.github.io/carousel/dist
 
 ### 使用的工具
 

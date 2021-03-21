@@ -1,0 +1,17 @@
+#contact {
+  background: url("../../assets/images/contact/background-contact.jpg") center
+    center no-repeat;
+  background-size: cover;
+
+  .text {
+    width: 584px;
+    height: 219px;
+    transform: translate(-297px, -110px);
+  }
+
+  .arrow {
+    width: 135px;
+    height: 135px;
+    transform: translate(-68px, 180px);
+  }
+}

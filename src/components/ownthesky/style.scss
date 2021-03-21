@@ -1,0 +1,45 @@
+#ownthesky {
+  background: url("../../assets/images/ownthesky/background-ownthesky.jpg")
+    center center no-repeat;
+  background-size: cover;
+
+  .logo {
+    width: 308px;
+    height: 377px;
+    transform: translate(-154px, -270px);
+  }
+
+  .launch-container {
+    width: 249px;
+    height: 89px;
+    transform: translate(-125px, 180px);
+    position: relative;
+    cursor: pointer;
+
+    img {
+      width: 249px;
+      height: 89px;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+    }
+
+    .launch {
+      display: block;
+    }
+
+    .launch-over {
+      display: none;
+    }
+
+    &:hover {
+      .launch {
+        display: none;
+      }
+
+      .launch-over {
+        display: block;
+      }
+    }
+  }
+}

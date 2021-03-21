@@ -1,0 +1,30 @@
+/* 依照圖片比例放大, 不會超過父層大小 */
+.object-fit-contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* 依照容器比例放大, 會超過父層大小 */
+.object-fit-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* block 水平垂直置中 */
+.block-position-transform-center {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* block 左上角對齊中心點 */
+.block-position-center {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}

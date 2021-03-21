@@ -1,0 +1,50 @@
+#luminarc {
+  background: url("../../assets/images/luminarc/background-luminarc.jpg") center
+    center no-repeat;
+  background-size: cover;
+
+  .logo {
+    width: 188px;
+    height: 175px;
+    transform: translate(-94px, -140px);
+  }
+
+  .text {
+    width: 564px;
+    height: 34px;
+    transform: translate(-282px, 70px);
+  }
+
+  .launch-container {
+    width: 229px;
+    height: 49px;
+    transform: translate(-115px, 150px);
+    cursor: pointer;
+
+    img {
+      width: 229px;
+      height: 49px;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+    }
+
+    .launch {
+      display: block;
+    }
+
+    .launch-over {
+      display: none;
+    }
+
+    &:hover {
+      .launch {
+        display: none;
+      }
+
+      .launch-over {
+        display: block;
+      }
+    }
+  }
+}

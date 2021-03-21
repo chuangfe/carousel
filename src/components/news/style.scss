@@ -1,0 +1,142 @@
+#news {
+  background: url("../../assets/images/news/background-news.jpg") center center
+    no-repeat;
+  background-size: cover;
+
+  .line-italic {
+    width: 100vw;
+    height: 1000vw;
+    // 由中上開始撲滿, 再使用 top 來對準圖片, 這樣 rwd 也沒問題
+    background: url("../../assets/images/news/line-italic-news.png") center top
+      repeat;
+    // 使用 js 控制
+    transform: translateY(0px);
+    position: absolute;
+    left: 0px;
+    top: -220px;
+  }
+
+  .content-container {
+    margin-left: -600px;
+    width: 1200px;
+    background: url("../../assets/images/news/line-news.png") left top repeat-y;
+    // 使用 js 控制
+    transform: translateY(0px);
+    position: absolute;
+    left: 50%;
+    top: 0px;
+
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .col {
+    padding-left: 2px;
+    width: 400px;
+    box-sizing: border-box;
+
+    .first {
+      // 第一個 img-container, 在這裡刪掉樣式, 這裡權力較高
+      transform: translateY(0px);
+    }
+  }
+
+  .col-left {
+    .first {
+      margin-top: 86px;
+    }
+  }
+
+  .col-center {
+    .first {
+      margin-top: 236px;
+    }
+  }
+
+  .col-right {
+    .first {
+      margin-top: 4px;
+    }
+  }
+
+  .hot {
+    width: 322px;
+    height: 322px;
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    top: 0px;
+  }
+
+  .img-container {
+    width: 398px;
+    height: 608px;
+    // 除了第一個 img-container 以外, 都要回推, 因為圖片是菱形
+    transform: translateY(-228px);
+    position: relative;
+    left: 0px;
+    top: 0px;
+    cursor: pointer;
+
+    img {
+      width: 398px;
+      height: 608px;
+      opacity: 0;
+      transition: opacity 0.6s ease-out;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+    }
+
+    &:hover {
+      img.show {
+        opacity: 1;
+      }
+    }
+
+    h4 {
+      font-size: 12px;
+      font-family: "GeogrotesqueSemiBold";
+      color: #fff;
+      position: absolute;
+      left: 14px;
+      top: 240px;
+    }
+
+    p {
+      font-size: 13px;
+      font-family: "AkzidenzGroteskBQRegular";
+      color: #fff;
+      opacity: 0.4;
+      position: absolute;
+      left: 14px;
+      top: 300px;
+    }
+  }
+
+  .scroll-container {
+    margin-left: 600px;
+    width: 31px;
+    height: 100%;
+    background: url("../../assets/images/news/pixel-news.png") left top repeat-y;
+    position: absolute;
+    left: 50%;
+    top: 0px;
+
+    .scroll {
+      width: 19px;
+      height: 189px;
+      background: #999 url("../../assets/images/news/scroll-news.png") left top
+        repeat-x;
+      position: absolute;
+      left: 6px;
+      top: 0px;
+      cursor: pointer;
+      display: none;
+
+      &.show {
+        display: block;
+      }
+    }
+  }
+}

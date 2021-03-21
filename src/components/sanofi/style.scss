@@ -1,0 +1,85 @@
+#sanofi {
+  .background {
+    margin-left: -900px;
+    margin-top: -506px;
+    width: 1800px;
+    height: 1012px;
+  }
+
+  .find {
+    margin-left: -310px;
+    margin-top: -200px;
+    width: 630px;
+    height: 14px;
+  }
+
+  .known {
+    margin-left: -140px;
+    margin-top: 200px;
+    width: 472px;
+    height: 24px;
+  }
+
+  .line {
+    margin-left: -283px;
+    margin-top: 0px;
+    width: 566px;
+    height: 1px;
+  }
+
+  .stockholm {
+    margin-left: -384px;
+    margin-top: 44px;
+    width: 8px;
+    height: 132px;
+  }
+
+  .stroke-one {
+    margin-left: -110px;
+    margin-top: -110px;
+    width: 220px;
+    height: 220px;
+  }
+
+  .stroke-two {
+    margin-left: -149px;
+    margin-top: -149px;
+    width: 298px;
+    height: 298px;
+  }
+
+  .stroke-three {
+    margin-left: -170px;
+    margin-top: -172px;
+    width: 340px;
+    height: 342px;
+  }
+
+  .launch {
+    margin-left: -110px;
+    margin-top: -110px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background-color: #f37375;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    user-select: none;
+    cursor: pointer;
+
+    font-family: "GeogrotesqueSemiBold";
+    color: #fff;
+    text-align: center;
+    font-size: 11px;
+    line-height: 24px;
+    letter-spacing: 3px;
+
+    h3 {
+      padding: 10px;
+      font-size: 26px;
+      letter-spacing: 4px;
+    }
+  }
+}

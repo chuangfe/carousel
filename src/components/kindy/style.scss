@@ -1,0 +1,131 @@
+#kindy {
+  background-color: #101621;
+
+  // 背景圖片使用 show class 來切換顯示
+  .background {
+    display: none;
+
+    &.show {
+      display: block;
+    }
+  }
+
+  // 圓圈圖片寬高不是偶數, 所以加上 center lass 不夠, transform 要重新設定
+  .circle {
+    transform: translate(-438px, -50%);
+  }
+
+  .mask-circle-container {
+    width: 632px;
+    height: 632px;
+    overflow: hidden;
+
+    .mask-circle {
+      width: 2528px;
+      height: 632px;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      transform: translateX(0px);
+
+      &.show {
+        transition: transform 0.6s steps(3) 0s;
+        transform: translateX(-75%);
+      }
+    }
+  }
+
+  .mask-container {
+    width: 380px;
+    height: 380px;
+    overflow: hidden;
+
+    .mask {
+      width: 8740px;
+      height: 380px;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      transform: translateX(0px);
+
+      &.show {
+        transition: transform 1.2s steps(23) 0s;
+        transform: translateX(-100%);
+      }
+    }
+  }
+
+  .find {
+    margin-left: -340px;
+    margin-top: -190px;
+    width: 206px;
+    height: 14px;
+  }
+
+  .title {
+    margin-left: -386px;
+    margin-top: -120px;
+    width: 135px;
+    height: 98px;
+    transform: translate(-68px, -49px);
+  }
+
+  .adventures {
+    margin-left: -306px;
+    margin-top: -92px;
+    width: 300px;
+    height: 150px;
+  }
+
+  .list {
+    transform: translate(-84px, -48px);
+    margin-left: -330px;
+    margin-top: 150px;
+
+    li {
+      font-size: 16px;
+      font-family: "Georgia";
+      color: #948e8c;
+      padding-left: 25px;
+      padding-bottom: 4px;
+      padding-top: 4px;
+      font-weight: bold;
+      font-style: italic;
+      cursor: pointer;
+
+      &.selected {
+        font-size: 26px;
+        color: #fff;
+        background: url("../../assets/images/kindy/current-kindy.png") left
+          center no-repeat;
+      }
+    }
+  }
+
+  .launch {
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    transform: translate(200px, -70%);
+    cursor: pointer;
+
+    &.moving {
+      animation: launch-moving 2s ease-in-out 0s 1 normal running backwards;
+    }
+  }
+}
+
+@keyframes launch-moving {
+  0% {
+    transform: translate(200px, -70%);
+  }
+  30% {
+    transform: translate(200px, -50%);
+  }
+  50% {
+    transform: translate(200px, -90%);
+  }
+  100% {
+    transform: translate(200px, -70%);
+  }
+}

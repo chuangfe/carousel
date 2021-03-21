@@ -1,0 +1,47 @@
+#loader {
+  width: 100vw;
+  height: 100vw;
+  overflow: hidden;
+  background-color: #000;
+  position: relative;
+
+  .circle {
+    width: 334px;
+    height: 332px;
+  }
+
+  .title {
+    overflow: hidden;
+
+    .mask {
+      width: 226px;
+      height: 28px;
+      background-color: #fff;
+      transform: translateX(0%);
+      position: absolute;
+      left: -100%;
+      top: 0px;
+    }
+
+    img {
+      width: 226px;
+      height: 28px;
+      position: relative;
+    }
+  }
+
+  .tutorial {
+    margin-top: 250px;
+    width: 226px;
+    height: 68px;
+    opacity: 0;
+  }
+
+  .txt-drag-projects {
+    margin-top: 310px;
+    width: 163px;
+    height: 7px;
+    opacity: 0;
+    transform: translate(-82px, -4px);
+  }
+}

@@ -1,6 +1,6 @@
 # Carousel Works
 
-### Copyright©
+### Copyright© 版權所有
 
 http://www.blacknegative.com/#!/whoweare/
 
@@ -18,18 +18,8 @@ jQuery
 
 ---
 
-## 副標題
+## 說明
 
-_斜線_
+**目前只有測試 1440 * 900 的解析度**
 
-**粗體**
-
-**_粗斜體_**
-
-- 列表
-  -- 列表內容 1
-  -- 列表內容 2
-
-> 引用內容
-
----
+**目前只有測試 Chrome Firefox**

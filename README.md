@@ -18,6 +18,6 @@ https://chuangfe.github.io/carousel/dist
 - 目前只有測試 Chrome Firefox
 
 
-## Copyright© 版權所有
+## Copyright©
 
 http://www.blacknegative.com/#!/whoweare/
